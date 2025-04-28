@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
+  /* Prevent scrolling when modal is open */
+  body.modal-open {
+    overflow: hidden;
+  }
+  
+  /* Cards container */
+  .cards-container {
+    position: relative;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .cards-container.shrink {
+    transform: translateY(-20px);
+    opacity: 0.8;
+  }
+  
+  /* Overlay */
+  .morph-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 2000;
+  }
+  
+  .morph-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Morph card */
+  .morph-card {
+    position: relative;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    z-index: 10;
+  }
+  
+  .morph-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+  }
+  
+  .morph-card-body {
+    padding: 1rem;
+  }
+  
+  .morph-card-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .morph-card-text {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  /* Close button */
+  .morph-close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    line-height: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+    z-index: 2102;
+  }
+  
+  .morph-card.expanded .morph-close-btn {
+    display: block;
+  }
+  
+  /* Modal inner content */
+  .morph-modal-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 1rem;
+    opacity: 0;
+    overflow-y: auto;
+    transition: opacity 0.3s ease;
+    z-index: 2100;
+    border-radius: 0.5rem;
+  }
+  
+  .morph-card.expanded .morph-modal-inner {
+    opacity: 1;
+    transition-delay: 0.3s;
+    padding-top: 3rem;
+    padding-left: 180px;
+  }
+  
+  .morph-modal-inner p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .morph-modal-inner ul {
+    font-size: 1.05rem;
+    padding-left: 1.2rem;
+    line-height: 1.8;
+    list-style: none;
+  }
+  
+  .morph-modal-inner ul li:before {
+    content: '✔️';
+    margin-right: 0.5rem;
+  }
+  
+  /* Expanded state */
+  .morph-card.expanded {
+    z-index: 2100;
+    border-radius: 0.5rem;
+    overflow: visible;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .morph-card.expanded img {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 150px;
+    height: auto;
+    z-index: 2101;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .morph-card.expanded img {
+      width: 100px;
+      top: 0.5rem;
+      left: 0.5rem;
+    }
+    .morph-card.expanded .morph-modal-inner {
+      padding-left: 120px;
+      padding-top: 2rem;
+    }
+    .morph-card.expanded {
+      width: 90vw !important;
+      height: 80vh !important;
+    }
+    .cards-container.shrink {
+      transform: translateY(-10px); /* Less movement on mobile */
+      opacity: 0.9;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .morph-card.expanded img {
+      width: 80px;
+      top: 0.5rem;
+      left: 0.5rem;
+    }
+    .morph-card.expanded .morph-modal-inner {
+      padding-left: 100px;
+      padding-top: 1.5rem;
+    }
+    .morph-card.expanded {
+      width: 95vw !important;
+      height: 75vh !important;
+    }
+    .cards-container.shrink {
+      transform: translateY(-5px);
+      opacity: 0.95;
+    }
+  }
+  /* Placeholder to maintain card space */
+.morph-card-placeholder {
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+  }

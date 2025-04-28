@@ -1,386 +1,844 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tech Services Hero Slider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="UTF-8">
-  <title>Tech Services Hero Slider</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (Optional for arrows/icons) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap Icons (Optional for arrows/icons) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
 
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      html,
+      body {
+        scroll-behavior: smooth;
+        font-family: "Roboto", sans-serif;
+      }
 
-  <style>
-    html,body {
-      scroll-behavior: smooth;
-      font-family: 'Roboto', sans-serif;
-      overflow-x: hidden;
-      
-    }
+      .navbar {
+        background-color: #002147;
+      }
 
-    .navbar {
-      background-color: #002147;
-    }
+      .navbar-brand,
+      .nav-link {
+        color: white !important;
+        font-weight: 600;
+      }
 
-    .navbar-brand,
-    .nav-link {
-      color: white !important;
-      font-weight: 600;
-    }
+      /* Optional: Give the carousel a visible height */
+      #heroCarousel .carousel-item {
+        height: 85vh;
+        min-height: 400px;
+        background: #000;
+        color: white;
+        position: relative;
+      }
 
-    /* Optional: Give the carousel a visible height */
-    #heroCarousel .carousel-item {
-      height: 85vh;
-      min-height: 400px;
-      background: #000;
-      color: white;
-      position: relative;
-    }
+      #heroCarousel .carousel-item img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        opacity: 0.3;
+      }
 
-    #heroCarousel .carousel-item img {
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
-      opacity: 0.3;
-    }
+      .carousel-caption {
+        z-index: 2;
+      }
 
-    .carousel-caption {
-      z-index: 2;
-    }
+      .section {
+        padding: 80px 0;
+        scroll-margin-top: 60px;
+      }
 
-    .section {
-      padding: 80px 0;
-      scroll-margin-top: 60px;
-    }
+      .bg-blue {
+        background-color: #002147;
+        color: white;
+      }
 
-    .bg-blue {
-      background-color: #002147;
-      color: white;
-    }
+      .bg-red {
+        background-color: #ae272b;
+        color: white;
+      }
 
-    .bg-red {
-      background-color: #ae272b;
-      color: white;
-    }
+      .text-blue {
+        color: #002147;
+      }
 
-    .text-blue {
-      color: #002147;
-    }
+      .text-red {
+        color: #ae272b;
+      }
 
-    .text-red {
-      color: #ae272b;
-    }
+      footer {
+        background-color: #002147;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
 
-    footer {
-      background-color: #002147;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#home">DeTrack</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-
-  <!-- Hero Carousel -->
-  <section id="home" class="">
-    <div id="heroCarousel" class="carousel slide carousel-fade mt-5" data-bs-ride="carousel">
-
-      <div class="carousel-inner">
-
-        <div class="carousel-item active">
-          <img src="images/2150061972.jpg" class="d-block w-100" alt="Slide 2">
-          <div class="carousel-caption text-start">
-            <h1 class="fw-bold">Software That Works for You</h1>
-            <p class="lead">Automate your workflows, track performance, and upgrade your digital systems with ease.</p>
-          </div>
-        </div>
-
-
-        <div class="carousel-item">
-          <img src="images/assortment-dirty-dumped-obj.jpg" class="d-block w-100" alt="Slide 1">
-          <div class="carousel-caption text-start">
-            <h1 class="fw-bold">Reliable Hardware, Ready When You Ar</h1>
-            <p class="lead">From desktops to devices—we keep your tech running smoothly at home or work.</p>
-          </div>
-        </div>
-
-
-        <div class="carousel-item">
-          <img src="images/round-modern-webcam-with-copy-space.jpg" style="object-fit: cover;object-position: right center;" class="d-block w-100" alt="Slide 3">
-          <div class="carousel-caption text-start">
-            <h1 class="fw-bold">Watch Over What Matters Most</h1>
-            <p class="lead">CCTV solutions designed for homes, offices, and anywhere you need peace of mind.</p>
-          </div>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">DeTrack</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+          </ul>
         </div>
       </div>
+    </nav>
 
-      <!-- Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </section>
-
-
-  <!-- Services Section -->
-  <section id="services" class="section text-center bg-red" data-aos="fade-up" data-aos-duration="1000">
-    <div class="container">
-      <h2 class="mb-5 fw-bold">Our Services</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="card rounded-4 h-100">
-            <img src="images/1-circuitboard-1024x683.png" class="card-img-top rounded-4" alt="Hardware Electronics">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Hardware Electronics</h5>
-              <p class="card-text">Supplying and maintaining cutting-edge electronic hardware tailored for reliability
-                and performance.</p>
+    <!-- Hero Carousel -->
+    <section id="home" class="">
+      <div
+        id="heroCarousel"
+        class="carousel slide carousel-fade mt-5"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="images/2150061972.jpg"
+              class="d-block w-100"
+              alt="Slide 2"
+            />
+            <div class="carousel-caption text-start">
+              <h1 class="fw-bold">Software That Works for You</h1>
+              <p class="lead">
+                Automate your workflows, track performance, and upgrade your
+                digital systems with ease.
+              </p>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 rounded-4">
-            <img src="images/2150061972.jpg" class="card-img-top rounded-4" alt="Software Solutions">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Software Solutions</h5>
-              <p class="card-text">Custom-built software solutions for business growth, digital transformation, and
-                operational efficiency.</p>
+
+          <div class="carousel-item">
+            <img
+              src="images/assortment-dirty-dumped-obj.jpg"
+              class="d-block w-100"
+              alt="Slide 1"
+            />
+            <div class="carousel-caption text-start">
+              <h1 class="fw-bold">Reliable Hardware, Ready When You Are</h1>
+              <p class="lead">
+                From desktops to devices—we keep your tech running smoothly at
+                home or work.
+              </p>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 rounded-4">
-            <img src="images/2150808000.jpg" class="card-img-top rounded-4" alt="CCTV Installation">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">CCTV Installation</h5>
-              <p class="card-text">Expert CCTV setup and maintenance for residential, commercial, and industrial safety.
+
+          <div class="carousel-item">
+            <img
+              src="images/round-modern-webcam-with-copy-space.jpg"
+              style="object-fit: cover; object-position: right center"
+              class="d-block w-100"
+              alt="Slide 3"
+            />
+            <div class="carousel-caption text-start">
+              <h1 class="fw-bold">Watch Over What Matters Most</h1>
+              <p class="lead">
+                CCTV solutions designed for homes, offices, and anywhere you
+                need peace of mind.
               </p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 rounded-4">
-            <img src="images/images (1).jpeg" class="card-img-top rounded-4" alt="Logistics and Hospitality">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Logistics & Hospitality</h5>
-              <p class="card-text">Streamlined logistics and premium hospitality services tailored to your operational
-                needs.</p>
-            </div>
-          </div>
-        </div>
+
+        <!-- Controls -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Overlay -->
+    <div class="morph-overlay" id="morph-overlay"></div>
 
-  <!-- Why choose us -->
-  <section class="py-5 bg-light section" id="why-choose-us" data-aos="fade-up" data-aos-duration="1000">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold text-danger">Why Choose Us</h2>
-        <p class="text-muted">Tech solutions made simple, scalable, and stress-free—for everyone.</p>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="row g-4">
-            <div class="col-sm-6">
-              <div class="card h-100 rounded-4 border-0 shadow-lg" data-aos="zoom-in" data-aos-delay="000">
-                <div class="card-body text-center">
-                  <div class="mb-3">
-                    <i class="bi bi-house-door-fill fs-1 text-blue"></i>
-                  </div>
-                  <h5 class="card-title">Home & Business Ready</h5>
-                  <p class="card-text">Whether you're a homeowner or running a company, our services scale to fit your
-                    needs—no one’s left out.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card h-100 rounded-4 border-0 shadow-lg" data-aos="zoom-in" data-aos-delay="100">
-                <div class="card-body text-center">
-                  <div class="mb-3">
-                    <i class="bi bi-people-fill fs-1 text-blue"></i>
-                  </div>
-                  <h5 class="card-title">Friendly Experts</h5>
-                  <p class="card-text">No tech snobbery here. Just real people, offering real help—explained in a way
-                    that makes sense to you.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card h-100 rounded-4 border-0 shadow-lg" data-aos="zoom-in" data-aos-delay="250">
-                <div class="card-body text-center">
-                  <div class="mb-3">
-                    <i class="bi bi-bar-chart-line-fill fs-1 text-blue"></i>
-                  </div>
-                  <h5 class="card-title">Scalable Solutions</h5>
-                  <p class="card-text">From quick fixes to full systems, our services grow with you. Perfect for
-                    individuals and growing teams alike.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card h-100 rounded-4 border-0 shadow-lg" data-aos="zoom-in" data-aos-delay="350">
-                <div class="card-body text-center">
-                  <div class="mb-3">
-                    <i class="bi bi-tools fs-1 text-blue"></i>
-                  </div>
-                  <h5 class="card-title">Support That Sticks</h5>
-                  <p class="card-text">We're here before, during, and after your install. Get ongoing help whenever you
-                    need it—no stress, no surprises.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 d-flex align-items-center">
-
-          <img src="images/casual-happy-businessman-talking-landline-phone-office-standing.jpg" alt=""
-            class="img-fluid rounded-4" data-aos="fade-left" data-aos-delay="400">
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="py-5 bg-blue section">
-    <div class="container">
-      <div class="row align-items-center">
-        
-        <!-- Text Column -->
-        <h2 class="fw-bold mb-5 text-center text-red">Who We Are</h2>
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <p class="lead">
-            We're a tech-driven team passionate about making technology accessible and reliable—for everyone. From homes and startups to large-scale operations, we bring tailored tech services that solve real-world problems.
+    <!-- Services Section -->
+<section
+id="services"
+class="section bg-light"
+data-aos="fade-up"
+data-aos-duration="1000"
+>
+<div class="container">
+  <h2 class="mb-5 fw-bold text-center">Our Services</h2>
+  <div class="row g-4">
+    <!-- Card 1: Hardware Electronics -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="morph-card rounded-4"
+        data-title="Hardware Electronics"
+        data-text="Supplying and maintaining cutting-edge electronic hardware tailored for reliability and performance."
+      >
+        <button class="morph-close-btn">×</button>
+        <img
+          src="images/1-circuitboard-1024x683.png"
+          class="card-img-top rounded-4"
+          alt="Hardware Electronics"
+        />
+        <div class="morph-card-body">
+          <h5 class="morph-card-title">Hardware Electronics</h5>
+          <p class="morph-card-text">
+            Supplying and maintaining cutting-edge electronic hardware tailored for reliability and performance.
           </p>
-          <p class="">
-            Whether you're setting up your first smart home, need help managing IT at your business, or want better security for your space—we’re here to make tech work for *you*. Simple. Scalable. Supportive.
+        </div>
+        <div class="morph-modal-inner">
+          <h2>Hardware Electronics</h2>
+          <p>
+            Your business deserves hardware that keeps up with your ambitions. From laptops to servers, we deliver reliable, high-performance solutions tailored to your needs. Whether you're upgrading a small office or outfitting a large enterprise, our expert team ensures fast delivery and seamless setup across Nigeria. Partnered with HP distributors, we provide quality you can trust — so your technology never holds you back.
           </p>
-  
-          <ul class="list-unstyled mt-4">
-            <li class="mb-2">
-              <i class="bi bi-check-circle-fill text-danger me-2"></i> Expert, friendly technicians
-            </li>
-            <li class="mb-2">
-              <i class="bi bi-check-circle-fill text-danger me-2"></i> Home & business solutions
-            </li>
-            <li class="mb-2">
-              <i class="bi bi-check-circle-fill text-danger me-2"></i> Fast response & ongoing support
-            </li>
+          <ul>
+            <li>Wide range of devices: laptops, desktops, servers, and accessories</li>
+            <li>Nationwide delivery with HP-backed quality</li>
+            <li>Expert setup and maintenance support</li>
+            <li>Visit our store at No: 13, Eletu Street, Awoyaya, Ibeju Lekki</li>
           </ul>
         </div>
-  
-        <!-- Image Column -->
-        <div class="col-lg-6 text-center">
-          <img src="https://source.unsplash.com/600x450/?teamwork,technology" alt="About Us" class="img-fluid rounded shadow">
-        </div>
-  
       </div>
     </div>
-  </section>
-  
-
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-5 bg-white section">
-    <div class="container">
-      <div class="row mb-5 text-center">
-        <div class="col">
-          <h2 class="fw-bold">Get in Touch</h2>
-          <p class="text-muted">We’re here to help with any questions, quotes, or support. Just drop us a line!</p>
+    <!-- Card 2: Software Solutions & Development -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="morph-card rounded-4"
+        data-title="Software Solutions & Development"
+        data-text="Custom-built software solutions for business growth, digital transformation, and operational efficiency."
+      >
+        <button class="morph-close-btn">×</button>
+        <img
+          src="images/2150061972.jpg"
+          class="card-img-top rounded-4"
+          alt="Software Solutions & Development"
+        />
+        <div class="morph-card-body">
+          <h5 class="morph-card-title">Software Solutions & Development</h5>
+          <p class="morph-card-text">
+            Custom-built software solutions for business growth, digital transformation, and operational efficiency.
+          </p>
+        </div>
+        <div class="morph-modal-inner">
+          <h2>Software Solutions & Development</h2>
+          <p>
+            Transform your business with software that fits like a glove. Our team builds custom applications that streamline operations, boost efficiency, and grow with you. From enterprise systems to mobile apps, we use cutting-edge languages like Java, PHP, and ASP.NET to create user-friendly solutions. No need to overhaul your processes — our software adapts to you, ensuring a seamless digital transformation.
+          </p>
+          <ul>
+            <li>Custom enterprise and mobile applications</li>
+            <li>Expertise in HTML, JavaScript, SQL, and more</li>
+            <li>Search-enabled websites and auto-SMS features</li>
+            <li>Scalable solutions tailored to your workflow</li>
+          </ul>
         </div>
       </div>
+    </div>
+    <!-- Card 3: CCTV Installation -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="morph-card rounded-4"
+        data-title="CCTV Installation"
+        data-text="Expert CCTV setup and maintenance for residential, commercial, and industrial safety."
+      >
+        <button class="morph-close-btn">×</button>
+        <img
+          src="images/2150808000.jpg"
+          class="card-img-top rounded-4"
+          alt="CCTV Installation"
+        />
+        <div class="morph-card-body">
+          <h5 class="morph-card-title">CCTV Installation</h5>
+          <p class="morph-card-text">
+            Expert CCTV setup and maintenance for residential, commercial, and industrial safety.
+          </p>
+        </div>
+        <div class="morph-modal-inner">
+          <h2>CCTV Installation</h2>
+          <p>
+            Security isn’t just about cameras — it’s about peace of mind, knowing that your property, people, and assets are protected around the clock. Whether you're safeguarding your home, monitoring a retail space, or securing a large commercial site, we make it simple to stay in control. Our CCTV solutions are designed to be smart, reliable, and easy to use, giving you instant access to what matters most — from anywhere, at any time. With crystal-clear video, real-time alerts, and expert support, you can focus on your day with confidence, knowing your world is covered.
+          </p>
+          <ul>
+            <li>High-definition cameras for clear, detailed footage</li>
+            <li>Remote viewing from your phone or computer</li>
+            <li>Fast, clean installations by expert technicians</li>
+            <li>Scalable systems for homes, shops, and large facilities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Card 4: Logistics & Hospitality -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="morph-card rounded-4"
+        data-title="Logistics & Hospitality"
+        data-text="Streamlined logistics and premium hospitality services tailored to your operational needs."
+      >
+        <button class="morph-close-btn">×</button>
+        <img
+          src="images/images (1).jpeg"
+          class="card-img-top rounded-4"
+          alt="Logistics & Hospitality"
+        />
+        <div class="morph-card-body">
+          <h5 class="morph-card-title">Logistics & Hospitality</h5>
+          <p class="morph-card-text">
+            Streamlined logistics and premium hospitality services tailored to your operational needs.
+          </p>
+        </div>
+        <div class="morph-modal-inner">
+          <h2>Logistics & Hospitality</h2>
+          <p>
+            In fast-moving industries like logistics and hospitality, timing and experience matter. We help you stay on track, reduce stress, and deliver exceptional service — whether you're moving goods or hosting guests. Our smart, tailored solutions simplify operations, improve coordination, and elevate customer experiences, so you can focus on what you do best.
+          </p>
+          <ul>
+            <li>Tools to keep operations running on time</li>
+            <li>Easy systems for managing bookings and schedules</li>
+            <li>Better coordination between teams</li>
+            <li>Support that grows with your business</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Card 5: IT Training -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="morph-card rounded-4"
+        data-title="IT Training"
+        data-text="Comprehensive IT training programs to empower teams with the latest technical skills."
+      >
+        <button class="morph-close-btn">×</button>
+        <img
+          src="Images/it training.png"
+          class="card-img-top rounded-4"
+          alt="IT Training"
+        />
+        <div class="morph-card-body">
+          <h5 class="morph-card-title">IT Training</h5>
+          <p class="morph-card-text">
+            Comprehensive IT training programs to empower teams with the latest technical skills.
+          </p>
+        </div>
+        <div class="morph-modal-inner">
+          <h2>IT Training</h2>
+          <p>
+            Empower your team with the skills to thrive in a digital world. Our IT training programs cover everything from basic computer skills to advanced software development and networking. Designed for beginners and professionals alike, our hands-on courses ensure practical learning that drives results. Explore our student projects and see the impact of our training firsthand.
+          </p>
+          <ul>
+            <li>Hands-on courses in software, hardware, and networking</li>
+            <li>From basics to advanced web and mobile app development</li>
+            <li>Student projects showcase real-world skills (<a href="studentwebsite.asp">view here</a>)</li>
+            <li>Flexible programs for individuals and teams</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Card 6: Webhosting & Domain Name Registration -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="morph-card rounded-4"
+        data-title="Webhosting & Domain Name Registration"
+        data-text="Reliable web hosting and domain registration services for a strong online presence."
+      >
+        <button class="morph-close-btn">×</button>
+        <img
+          src="Images/webhosting.jpg"
+          class="card-img-top rounded-4"
+          alt="Webhosting & Domain Name Registration"
+        />
+        <div class="morph-card-body">
+          <h5 class="morph-card-title">Webhosting & Domain Name Registration</h5>
+          <p class="morph-card-text">
+            Reliable web hosting and domain registration services for a strong online presence.
+          </p>
+        </div>
+        <div class="morph-modal-inner">
+          <h2>Webhosting & Domain Name Registration</h2>
+          <p>
+            Your online presence starts with a reliable foundation. Our web hosting and domain registration services ensure your website is fast, secure, and always online. Partnered with top US hosting providers, we guarantee 99.9% uptime and competitive pricing. Whether you need a simple site or a dynamic database-driven plattform, we make it easy to shine online.
+          </p>
+          <ul>
+            <li>99.9% uptime with US-based hosting partners</li>
+            <li>Competitive domain registration and hosting plans</li>
+            <li>Support for dynamic websites and databases</li>
+            <li>SEO and Google Maps optimization included</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Card 7: IT Consultancy & Staffing -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="morph-card Rounded-4"
+        data-title="IT Consultancy & Staffing"
+        data-text="Expert IT consultancy and staffing solutions to drive project success and innovation."
+      >
+        <button class="morph-close-btn">×</button>
+        <img
+          src="Images/concentrated-call-center.jpg"
+          class="card-img-top rounded-4"
+          alt="IT Consultancy & Staffing"
+        />
+        <div class="morph-card-body">
+          <h5 class="morph-card-title">IT Consultancy & Staffing</h5>
+          <p class="morph-card-text">
+            Expert IT consultancy and staffing solutions to drive project success and innovation.
+          </p>
+        </div>
+        <div class="morph-modal-inner">
+          <h2>IT Consultancy & Staffing</h2>
+          <p>
+            Build a stronger IT foundation with expert guidance and talent. Our consultancy services optimize your software choices, infrastructure, and IT department setup for maximum efficiency. Need skilled professionals? Our staffing solutions connect you with top IT talent to drive innovation and ensure project success. With DataTrack, your organization gets the strategic support it needs to thrive in a digital world.
+          </p>
+          <ul>
+            <li>Strategic software and infrastructure consulting</li>
+            <li>Skilled IT staffing for seamless project execution</li>
+            <li>Tailored solutions for efficient IT departments</li>
+            <li>Expert support to boost organizational productivity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Card 8: Website Design -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="morph-card rounded-4"
+        data-title="Website Design"
+        data-text="Creative and responsive website design to elevate your brand's digital presence."
+      >
+        <button class="morph-close-btn">×</button>
+        <img
+          src="Images/web-design-internet-website-resp.jpg"
+          class="card-img-top rounded-4"
+          alt="Website Design"
+        />
+        <div class="morph-card-body">
+          <h5 class="morph-card-title">Website Design</h5>
+          <p class="morph-card-text">
+            Creative and responsive website design to elevate your brand's digital presence.
+          </p>
+        </div>
+        <div class="morph-modal-inner">
+          <h2>Website Design</h2>
+          <p>
+            Your website is often the first impression of your brand — and first impressions matter. We make sure it's not just good, but great. Our team focuses on clean design, intuitive navigation, and responsive layouts that work beautifully on all devices. Whether you need a landing page, a portfolio, or a full-scale business site, we craft digital experiences that reflect your brand and engage your visitors. We combine creativity with functionality to deliver sites that are fast, secure, and easy to maintain. Let’s turn your ideas into a website people love to visit — and love to come back to.
+          </p>
+          <ul>
+            <li>Custom designs tailored to your brand</li>
+            <li>Mobile-first and responsive across all devices</li>
+            <li>Optimized for speed, performance, and SEO</li>
+            <li>Secure, scalable, and easy to update</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
-      <div class="row align-items-start">
+    <!-- Why choose us -->
+    <section
+      class="py-5 bg-light section"
+      id="why-choose-us"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      style="overflow-x: hidden"
+    >
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold text-danger">Why Choose Us</h2>
+          <p class="text-muted">
+            Tech solutions made simple, scalable, and stress-free—for everyone.
+          </p>
+        </div>
 
-        <!-- Contact Info -->
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <div class="bg-light p-4 rounded shadow-sm h-100">
-            <h5 class="fw-bold mb-4">Contact Details</h5>
-            <p class="mb-3"><i class="bi bi-geo-alt-fill text-blue me-2"></i> 123 Tech Street, City Name, Country</p>
-            <p class="mb-3"><i class="bi bi-envelope-fill text-blue me-2"></i> hello@yourcompany.com</p>
-            <p class="mb-3"><i class="bi bi-telephone-fill text-blue me-2"></i> +123 456 7890</p>
-            <hr>
-            <h6 class="fw-semibold">Working Hours</h6>
-            <p class="mb-0 text-muted">Mon - Fri: 9am – 6pm<br>Sat: 10am – 4pm<br>Sun: Closed</p>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="row g-4">
+              <div class="col-sm-6">
+                <div
+                  class="card h-100 rounded-4 border-0 shadow-lg"
+                  data-aos="zoom-in"
+                  data-aos-delay="000"
+                >
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <i class="bi bi-house-door-fill fs-1 text-blue"></i>
+                    </div>
+                    <h5 class="card-title">Home & Business Ready</h5>
+                    <p class="card-text">
+                      Whether you're a homeowner or running a company, our
+                      services scale to fit your needs—no one’s left out.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div
+                  class="card h-100 rounded-4 border-0 shadow-lg"
+                  data-aos="zoom-in"
+                  data-aos-delay="100"
+                >
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <i class="bi bi-people-fill fs-1 text-blue"></i>
+                    </div>
+                    <h5 class="card-title">Friendly Experts</h5>
+                    <p class="card-text">
+                      No tech snobbery here. Just real people, offering real
+                      help—explained in a way that makes sense to you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div
+                  class="card h-100 rounded-4 border-0 shadow-lg"
+                  data-aos="zoom-in"
+                  data-aos-delay="250"
+                >
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <i class="bi bi-bar-chart-line-fill fs-1 text-blue"></i>
+                    </div>
+                    <h5 class="card-title">Scalable Solutions</h5>
+                    <p class="card-text">
+                      From quick fixes to full systems, our services grow with
+                      you. Perfect for individuals and growing teams alike.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div
+                  class="card h-100 rounded-4 border-0 shadow-lg"
+                  data-aos="zoom-in"
+                  data-aos-delay="350"
+                >
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <i class="bi bi-tools fs-1 text-blue"></i>
+                    </div>
+                    <h5 class="card-title">Support That Sticks</h5>
+                    <p class="card-text">
+                      We're here before, during, and after your install. Get
+                      ongoing help whenever you need it—no stress, no surprises.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+            <img
+              src="images/casual-happy-businessman-talking-landline-phone-office-standing.jpg"
+              alt=""
+              class="img-fluid rounded-4"
+              data-aos="fade-left"
+              data-aos-delay="400"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-5 bg-blue section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Text Column -->
+          <h2 class="fw-bold mb-5 text-center text-red">Who We Are</h2>
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <p class="lead">
+              We're a tech-driven team passionate about making technology
+              accessible and reliable—for everyone. From homes and startups to
+              large-scale operations, we bring tailored tech services that solve
+              real-world problems.
+            </p>
+            <p class="">
+              Whether you're setting up your first smart home, need help
+              managing IT at your business, or want better security for your
+              space—we’re here to make tech work for *you*. Simple. Scalable.
+              Supportive.
+            </p>
+
+            <ul class="list-unstyled mt-4">
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-danger me-2"></i> Expert,
+                friendly technicians
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-danger me-2"></i> Home &
+                business solutions
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-danger me-2"></i> Fast
+                response & ongoing support
+              </li>
+            </ul>
+          </div>
+
+          <!-- Image Column -->
+          <div class="col-lg-6 text-center">
+            <img
+              src="https://source.unsplash.com/600x450/?teamwork,technology"
+              alt="About Us"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-white section">
+      <div class="container">
+        <div class="row mb-5 text-center">
+          <div class="col">
+            <h2 class="fw-bold">Get in Touch</h2>
+            <p class="text-muted">
+              We’re here to help with any questions, quotes, or support. Just
+              drop us a line!
+            </p>
           </div>
         </div>
 
-        <!-- Contact Form -->
-        <div class="col-lg-7">
-          <form class="p-4 bg-light rounded shadow-sm">
-            <div class="mb-3">
-              <label for="name" class="form-label">Full Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Your full name" required>
+        <div class="row align-items-start">
+          <!-- Contact Info -->
+          <div class="col-lg-5 mb-4 mb-lg-0">
+            <div class="bg-light p-4 rounded shadow-sm h-100">
+              <h5 class="fw-bold mb-4">Contact Details</h5>
+              <p class="mb-3">
+                <i class="bi bi-geo-alt-fill text-blue me-2"></i> 123 Tech
+                Street, City Name, Country
+              </p>
+              <p class="mb-3">
+                <i class="bi bi-envelope-fill text-blue me-2"></i>
+                hello@yourcompany.com
+              </p>
+              <p class="mb-3">
+                <i class="bi bi-telephone-fill text-blue me-2"></i> +123 456
+                7890
+              </p>
+              <hr />
+              <h6 class="fw-semibold">Working Hours</h6>
+              <p class="mb-0 text-muted">
+                Mon - Fri: 9am – 6pm<br />Sat: 10am – 4pm<br />Sun: Closed
+              </p>
             </div>
+          </div>
 
-            <div class="mb-3">
-              <label for="email" class="form-label">Email Address</label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
-            </div>
+          <!-- Contact Form -->
+          <div class="col-lg-7">
+            <form class="p-4 bg-light rounded shadow-sm">
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
 
-            <div class="mb-3">
-              <label for="subject" class="form-label">Subject</label>
-              <input type="text" class="form-control" id="subject" placeholder="Subject or service type">
-            </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
 
-            <div class="mb-4">
-              <label for="message" class="form-label">Your Message</label>
-              <textarea class="form-control" id="message" rows="5" placeholder="How can we help you?"
-                required></textarea>
-            </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subject"
+                  placeholder="Subject or service type"
+                />
+              </div>
 
-            <button type="submit" class="btn btn-danger px-4">Send Message</button>
-          </form>
+              <div class="mb-4">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="How can we help you?"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-danger px-4">
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 DeTrack. All Rights Reserved.</p>
+      </div>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 DeTrack. All Rights Reserved.</p>
-    </div>
-  </footer>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
 
-  <!-- Bootstrap 5 JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+     // Morphing card script
+const morphCards = document.querySelectorAll(".morph-card");
+const morphOverlay = document.getElementById("morph-overlay");
+let activeMorphCard = null;
+let origRect = null;
+let placeholder = null;
 
-</body>
+function getModalDimensions() {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  let modalW, modalH;
+  if (vw <= 576) {
+    modalW = vw * 0.95;
+    modalH = vh * 0.75;
+  } else if (vw <= 768) {
+    modalW = vw * 0.9;
+    modalH = vh * 0.8;
+  } else {
+    modalW = vw * 0.8;
+    modalH = vh * 0.8;
+  }
+  const modalTop = (vh - modalH) / 2;
+  const modalLeft = (vw - modalW) / 2;
+  return { modalW, modalH, modalTop, modalLeft };
+}
 
+morphCards.forEach((card) => {
+  card.addEventListener("click", () => expand(card));
+  card.querySelector(".morph-close-btn").addEventListener("click", (e) => {
+    e.stopPropagation();
+    collapse(card);
+  });
+});
+
+morphOverlay.addEventListener("click", () => collapse(activeMorphCard));
+
+function expand(card) {
+  if (activeMorphCard) return;
+  activeMorphCard = card;
+  origRect = card.getBoundingClientRect();
+
+  // Create placeholder
+  placeholder = document.createElement("div");
+  placeholder.classList.add("morph-card-placeholder");
+  placeholder.style.width = origRect.width + "px";
+  placeholder.style.height = origRect.height + "px";
+  card.parentNode.insertBefore(placeholder, card);
+
+  // Prevent body scrolling
+  document.body.classList.add("modal-open");
+
+  // Set overlay to active
+  morphOverlay.classList.add("active");
+
+  // Position card
+  card.style.position = "fixed";
+  card.style.top = origRect.top + "px";
+  card.style.left = origRect.left + "px";
+  card.style.width = origRect.width + "px";
+  card.style.height = origRect.height + "px";
+
+  card.classList.add("expanded");
+  card.getBoundingClientRect(); // Force reflow
+
+  // Apply responsive modal dimensions
+  const { modalW, modalH, modalTop, modalLeft } = getModalDimensions();
+  card.style.top = modalTop + "px";
+  card.style.left = modalLeft + "px";
+  card.style.width = modalW + "px";
+  card.style.height = modalH + "px";
+}
+
+function collapse(card) {
+  if (!card) return;
+
+  // Restore body scrolling
+  document.body.classList.remove("modal-open");
+
+  morphOverlay.classList.remove("active");
+
+  // Remove expanded state
+  card.classList.remove("expanded");
+  card.getBoundingClientRect(); // Force reflow
+
+  // Animate back to original position
+  card.style.top = origRect.top + "px";
+  card.style.left = origRect.left + "px";
+  card.style.width = origRect.width + "px";
+  card.style.height = origRect.height + "px";
+
+  card.addEventListener("transitionend", function handler(e) {
+    if (e.propertyName !== "top") return;
+    card.style = ""; // Reset styles
+    // Remove placeholder after transition
+    if (placeholder && placeholder.parentNode) {
+      placeholder.parentNode.removeChild(placeholder);
+    }
+    placeholder = null;
+    card.removeEventListener("transitionend", handler);
+  });
+
+  activeMorphCard = null;
+}
+    </script>
+  </body>
 </html>
