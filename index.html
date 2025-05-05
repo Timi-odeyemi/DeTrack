@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Tech Services Hero Slider</title>
+    <title>DeTrack Systems</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap 5 CSS -->
@@ -231,13 +231,12 @@ data-aos-duration="1000"
         <div class="morph-modal-inner">
           <h2>Hardware Electronics</h2>
           <p>
-            Your business deserves hardware that keeps up with your ambitions. From laptops to servers, we deliver reliable, high-performance solutions tailored to your needs. Whether you're upgrading a small office or outfitting a large enterprise, our expert team ensures fast delivery and seamless setup across Nigeria. Partnered with HP distributors, we provide quality you can trust — so your technology never holds you back.
+            Your business deserves hardware that keeps up with your ambitions. From laptops to servers, we deliver reliable, high-performance solutions tailored to your needs. Whether you're upgrading a small office or outfitting a large enterprise, our expert team ensures fast delivery and seamless setup across America. Partnered with UPS distributors, we provide quality you can trust — so your technology never holds you back.
           </p>
           <ul>
-            <li>Wide range of devices: laptops, desktops, servers, and accessories</li>
-            <li>Nationwide delivery with HP-backed quality</li>
+            <li>Wide range of devices: laptops, desktops, servers, and accessories, washing machine, ges/ectric cookers, TV, sound-box, microwave and all other home appliances.</li>
             <li>Expert setup and maintenance support</li>
-            <li>Visit our store at No: 13, Eletu Street, Awoyaya, Ibeju Lekki</li>
+            <li>General electronics support across your office and home appliances</li>
           </ul>
         </div>
       </div>
@@ -649,34 +648,35 @@ data-aos-duration="1000"
             <div class="bg-light p-4 rounded shadow-sm h-100">
               <h5 class="fw-bold mb-4">Contact Details</h5>
               <p class="mb-3">
-                <i class="bi bi-geo-alt-fill text-blue me-2"></i> 123 Tech
-                Street, City Name, Country
+                <i class="bi bi-geo-alt-fill text-blue me-2"></i> 7528 Magnolia Ave. Hammond, IN<br>
+                46324
               </p>
               <p class="mb-3">
                 <i class="bi bi-envelope-fill text-blue me-2"></i>
-                hello@yourcompany.com
+                victor@detracksystems.com
               </p>
               <p class="mb-3">
-                <i class="bi bi-telephone-fill text-blue me-2"></i> +123 456
-                7890
+                <i class="bi bi-telephone-fill text-blue me-2"></i> +1-443-449-0067
               </p>
               <hr />
               <h6 class="fw-semibold">Working Hours</h6>
               <p class="mb-0 text-muted">
-                Mon - Fri: 9am – 6pm<br />Sat: 10am – 4pm<br />Sun: Closed
+                Mon - Fri: 8am – 5pm<br />
+                Sat: 9am – 4pm<br />Sun: Closed
               </p>
             </div>
           </div>
 
           <!-- Contact Form -->
           <div class="col-lg-7">
-            <form class="p-4 bg-light rounded shadow-sm">
+            <form class="p-4 bg-light rounded shadow-sm" id="contact-form">
               <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
                 <input
                   type="text"
                   class="form-control"
                   id="name"
+                  name="name"
                   placeholder="Your full name"
                   required
                 />
@@ -688,6 +688,7 @@ data-aos-duration="1000"
                   type="email"
                   class="form-control"
                   id="email"
+                  name="email"
                   placeholder="you@example.com"
                   required
                 />
@@ -699,6 +700,7 @@ data-aos-duration="1000"
                   type="text"
                   class="form-control"
                   id="subject"
+                  name="subject"
                   placeholder="Subject or service type"
                 />
               </div>
@@ -708,6 +710,7 @@ data-aos-duration="1000"
                 <textarea
                   class="form-control"
                   id="message"
+                  name="message"
                   rows="5"
                   placeholder="How can we help you?"
                   required
@@ -840,5 +843,41 @@ function collapse(card) {
   activeMorphCard = null;
 }
     </script>
+
+
+
+
+<!-- contact-form script -->
+ <script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const data = {
+      fullname: form.name.value,
+      email: form.email.value,
+      subject: form.subject.value,
+      message: form.message.value
+    };
+  
+    fetch('https://script.google.com/macros/s/AKfycbx__oNvneXwLqpEnYryDMXjHbudm6j9KirmTGlAJu8Bk-fMjBGVVuOvtFizY2N8e1EVYQ/exec', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  mode: 'no-cors', // Prevents CORS errors, but limits response visibility
+  body: JSON.stringify(data)
+})
+    .then(res => res.text())
+    .then(response => {
+      alert('Form submitted: ' + response);
+      form.reset();
+    })
+    .catch(err => {
+      console.error(err);
+      alert('Error submitting form');
+    });
+  });
+  </script>
   </body>
 </html>
